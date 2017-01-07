@@ -27,7 +27,7 @@ endor_roll <- function(nextsteps,numstormtroopers, seed=NULL)
     numsteps
 }
 
-endor_sumulation <- function(numsims, nextsteps,numstormtroopers)
+endor_simulation <- function(numsims, nextsteps,numstormtroopers)
 {
     numsteps <- as.numeric()
     for (i in 1:numsims)
@@ -76,8 +76,8 @@ endor_output <- function(n)
 {
     for (i in 2:5)
     {
-        nostorm <- endor_sumulation(n,rep(i,5),0)
-        storm <- endor_sumulation(n,rep(i,5),5)
+        nostorm <- endor_simulation(n,rep(i,5),0)
+        storm <- endor_simulation(n,rep(i,5),5)
         meandiff <- mean(nostorm - storm)
         sddiff <- sd(nostorm - storm)
         print(paste0(i,": average difference= ",meandiff,", sd difference = ",sddiff))
